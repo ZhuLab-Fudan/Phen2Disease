@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Split protein list into three parts: train set, ltr set, and test set.
-We will get three annotation datasets, three protein lists, and term list.
-Besides, we will split HPO terms into several groups according to frequency.
-"""
 import json
 import pandas as pd
 import pickle
