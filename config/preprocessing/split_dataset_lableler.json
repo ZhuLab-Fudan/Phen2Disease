@@ -1,0 +1,12 @@
+{
+  "ontology": {
+    "time0": {
+      "path": "../../data/obo/hp20201207.obo",
+      "version": "201904"
+    },
+    "time1": {
+      "path": "../../data/obo/hp20210413.obo",
+      "version": "202102"
+    }
+  }
+}
