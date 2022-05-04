@@ -48,12 +48,11 @@ freq = None
 ic = None
 
 
-def ic_sim(x):
+
+def lin_sim(x):
     """
-    Information coefficient measure, see Li, B., Wang, J. Z., Feltus,
-    F. A., Zhou, J., & Luo, F. (2010). Effectively integrating information
-    content and structural relationship to improve the GO-based similarity
-    measure between proteins. arXiv preprint arXiv: 1001.0958.
+    Lin measure, see Lin D. An information-theoretic definition of
+    similarity. In: ICML, vol. Vol. 98, no. 1998; 1998. p. 296–304.
     :param x: tuple of index name, i.e. (row_term, col_term)
     :return: similarity
     """
@@ -73,8 +72,9 @@ def ic_sim(x):
     # information content of most informative common ancestor
     ic_mica = ic[common_ancestors].max()
     # similarity between term_a and term_b
-    sim = (2 * ic_mica / (ic[term_a] + ic[term_b])) * (1 - 1 / (1 + ic_mica))
+    sim = 2 * ic_mica / (ic[term_a] + ic[term_b])
     return sim
+
 
 
 path_association="../../../data/association/Disease-Hpo"
@@ -129,7 +129,7 @@ path_disease = "../../../data/diseaselist"
 path_patient="../../../data/patient"
 path_single = "../../../src/result/diseaserank/patient"
 
-#读取path路径下的全部文件名
+#read path
 files_disease_folder = os.listdir(path_disease)
 files_patient_folder = os.listdir(path_patient)
 
@@ -141,7 +141,7 @@ for term in term_list_sets:
 #
 similarity = pd.DataFrame(0, index=term_list_sets, columns=term_list_sets)
 similarity = similarity.stack()
-similarity.loc[:] = similarity.index.map(ic_sim)
+similarity.loc[:] = similarity.index.map(lin_sim)
 
 similarity = similarity.unstack()
 # write to the json file
@@ -204,7 +204,7 @@ for file in files_patient_folder:
         disease_term_list = list(termlist_disease[0].values)
         patient_term_list_ORI = list(termlist_patient[0].values)
         ################################################
-        ##排除不存在的term
+        ##except term
         patient_term_list = []
         for term in patient_term_list_ORI:
             if term in term_list:
