@@ -252,41 +252,6 @@ for file in files_patient_folder:
         term_weight = []
 
         #####################
-        ######double weight
-        #####################
-        # for term_1 in similarity:
-        #     if term_1 in patient_term_list:
-        #         score_term_list = []
-        #         weight_term_list = []
-        #         for term_2 in similarity[term_1]:
-        #             if term_2 in disease_term_list:
-        #                 # ic_mica_0 = ic[list(ancestors[term_1] & ancestors[term_2])].max()
-        #                 score_term_list.append(similarity[term_1][term_2])
-        #                 weight_term_list.append(ic[term_1] * ic[term_2])
-        #         if np.array(score_term_list).shape[0] == 0:
-        #             max_score = max_score + 0
-        #         else:
-        #             index_weight = score_term_list.index(max(score_term_list))
-        #             term_weight.append(weight_term_list[index_weight])
-        #             max_score = max_score + max(score_term_list) * weight_term_list[index_weight]
-        #
-        # for term_1 in similarity:
-        #     if term_1 in disease_term_list:
-        #         score_term_list = []
-        #         weight_term_list = []
-        #         for term_2 in similarity[term_1]:
-        #             if term_2 in patient_term_list:
-        #                 # ic_mica_0 = ic[list(ancestors[term_1] & ancestors[term_2])].max()
-        #                 score_term_list.append(similarity[term_1][term_2])
-        #                 weight_term_list.append(ic[term_1] * ic[term_2])
-        #         if np.array(score_term_list).shape[0] == 0:
-        #             max_score = max_score + 0
-        #         else:
-        #             index_weight = score_term_list.index(max(score_term_list))
-        #             term_weight.append(weight_term_list[index_weight])
-        #             max_score = max_score + max(score_term_list) * weight_term_list[index_weight]
-
-        #####################
         ######single weight
         #####################
         for term_1 in similarity:
@@ -303,21 +268,6 @@ for file in files_patient_folder:
                     index_weight = score_term_list.index(max(score_term_list))
                     term_weight.append(ic[term_1])
                     max_score = max_score + max(score_term_list) * ic[term_1]
-
-        # for term_1 in similarity:
-        #     if term_1 in disease_term_list:
-        #         score_term_list = []
-        #         # weight_term_list = []
-        #         for term_2 in similarity[term_1]:
-        #             if term_2 in patient_term_list:
-        #                 score_term_list.append(similarity[term_1][term_2])
-        #                 # weight_term_list.append(ic[term_1] * ic[term_2])
-        #         if np.array(score_term_list).shape[0] == 0:
-        #             max_score = max_score + 0
-        #         else:
-        #             index_weight = score_term_list.index(max(score_term_list))
-        #             term_weight.append(ic[term_1])
-        #             max_score = max_score + max(score_term_list) * ic[term_1]
 
         if sum(term_weight) == 0:
             max_score = max_score / (epsilon)
