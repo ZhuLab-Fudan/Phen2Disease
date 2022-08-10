@@ -279,7 +279,7 @@ for file in files_patient_folder:
                     if term_2 in patient_term_list:
                         # ic_mica_0 = ic[list(ancestors[term_1] & ancestors[term_2])].max()
                         score_term_list.append(similarity[term_1][term_2])
-                        weight_term_list.append(ic[term_2])
+                        weight_term_list.append(ic[term_1])
                 if np.array(score_term_list).shape[0] == 0:
                     max_score = max_score + 0
                 else:
