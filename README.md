@@ -1,6 +1,6 @@
 # Phen2Disease
 
-A Phenotype-driven Semantic Similarity-based Integrated Model for Disease and Gene Prioritization
+Phen2Disease: A Phenotype-driven Semantic Similarity-based Integrated Model for Disease and Gene Prioritization
 
 # Precessing
 
