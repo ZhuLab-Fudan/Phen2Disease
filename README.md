@@ -1,10 +1,12 @@
 # Phen2Disease
 
+A Phenotype-driven Semantic Similarity-based Integrated Model for Disease and Gene Prioritization
+
+# Precessing
+
 Extract data/diseaselist.rar file to the current folder
 
 The patient HPO files are placed under data/patient in order
-
-# Precessing
 
 Turn to src/model/Phen2Disease folder and run:
 
