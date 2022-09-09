@@ -6,13 +6,13 @@ A Phenotype-driven Semantic Similarity-based Integrated Model for Disease and Ge
 
 Extract data/diseaselist.rar file to the current folder
 
-The patient HPO files are placed under data/patient in order
+Place the patient HPO files under data/patient
 
 Turn to src/model/Phen2Disease folder and run:
 
-Phen2Disease-patient.py, Phen2Disease-double.py, (Phen2Disease-disease.py (Can be run optionally))
+(1) Phen2Disease-patient.py, Phen2Disease-double.py, (Phen2Disease-disease.py (Can be run optionally))
 
-Get the disease sorting results of each case in the corresponding folder of src/result/diseaserank folder
+(2) Get the disease sorting results of each case in the corresponding folder of src/result/diseaserank folder
 
 # Disease Prioritization
 (1) Turn to src/model/Similarityscore/disease_integrated folder in order to run:
