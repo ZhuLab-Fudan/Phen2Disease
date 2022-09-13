@@ -8,10 +8,6 @@ Extract data/diseaselist.rar file to the current folder
 
 Place the patient HPO files under data/patient
 
-Extract data/diseaselist.rar file to the current folder
-
-Place the patient HPO files under data/patient
-
 Turn to src/model/Phen2Disease folder and run:
 
 (1) Phen2Disease-patient.py, Phen2Disease-double.py, (Phen2Disease-disease.py (Can be run optionally))
