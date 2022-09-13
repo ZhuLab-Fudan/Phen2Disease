@@ -1,0 +1,1 @@
+Here we get the json file of diseases prioritization files after merging cases

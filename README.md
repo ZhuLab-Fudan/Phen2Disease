@@ -15,6 +15,7 @@ Turn to src/model/Phen2Disease folder and run:
 (2) Get the disease sorting results of each case in the corresponding folder of src/result/diseaserank folder
 
 # Disease Prioritization
+
 (1) Turn to src/model/Similarityscore/disease_integrated folder in order to run:
 
 score2disease_patient.py, score2disease_double.py , (score2disease_disease.py (Can be run optionally))
@@ -23,7 +24,7 @@ In src/result/diseaserank/result folder you can get the json file of diseases pr
 
 (2) Run disease_integrated.py
 
-Turn to src/utils/DiseaseRankResult/finally folder you can get the final json file of the integrated of disease ranking results (phen2disease_integrated_result.json)
+Turn to src/utils/DiseaseRankResult/finally folder you can get the final json file of the integrated of disease ranking results (Phen2Disease_integrated_result.json)
 
 # Gene Prioritization
 
@@ -35,4 +36,4 @@ In src/result/diseaserank/result folder you can get the json file of diseases pr
 
 (2) Run gene_integrated.py
 
-Turn to src/utils/GeneRankResult/finally folder you can get the final json file of the integrated of gene ranking results (phen2disease_integrated_result.json)
+Turn to src/utils/GeneRankResult/finally folder you can get the final json file of the integrated of gene ranking results (Phen2Disease_integrated_result.json)
