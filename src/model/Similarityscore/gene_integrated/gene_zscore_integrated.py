@@ -29,10 +29,10 @@ import json
 path_base="../../../../src/result"
 
 path_disease_result=path_base+"/"+"diseaserank/result"
-path_gene_result=path_base+"/"+"generank/result"
 ########################################################################################
 path_gene_finally="../../../../src/utils/GeneRankResult/finally"
 
+#disease2zscore_json
 
 with open(path_disease_result + "/" + "Phen2Disease_patient_result.json") as fp:
     phen2disease_patient = json.load(fp)
@@ -43,15 +43,51 @@ with open(path_disease_result + "/" + "Phen2Disease_double_result.json") as fp:
 # with open(path_disease_result + "/" + "Phen2Disease_disease_result.json") as fp:
 #     phen2disease_disease = json.load(fp)
 
+phen2disease_patient_zscore = defaultdict(dict)
 
-phen2disease_integrated_sum = defaultdict(dict)
+for patient in phen2disease_patient:
+    patient_score_list = []
+    for gene in phen2disease_patient[patient]:
+        patient_score_list.append(float(phen2disease_patient[patient][gene]))
+    patient_score_mean = np.array(patient_score_list).mean()
+    patient_score_std = np.std(np.array(patient_score_list), ddof=1)
+    for gene in phen2disease_patient[patient]:
+        phen2disease_patient_zscore[patient][gene] = float(
+            (float(phen2disease_patient[patient][gene]) - patient_score_mean) / patient_score_std)
+
+# phen2disease_disease_zscore = defaultdict(dict)
+#
+# for patient in phen2disease_disease:
+#     patient_score_list = []
+#     for gene in phen2disease_disease[patient]:
+#         patient_score_list.append(float(phen2disease_disease[patient][gene]))
+#     patient_score_mean = np.array(patient_score_list).mean()
+#     patient_score_std = np.std(np.array(patient_score_list), ddof=1)
+#     for gene in phen2disease_disease[patient]:
+#         phen2disease_disease_zscore[patient][gene] = float(
+#             (float(phen2disease_disease[patient][gene]) - patient_score_mean) / patient_score_std)
+
+phen2disease_double_zscore = defaultdict(dict)
 
 for patient in phen2disease_double:
+    patient_score_list = []
     for gene in phen2disease_double[patient]:
-        phen2disease_integrated_sum[patient][gene] = phen2disease_patient[patient][gene] + \
-                                                            phen2disease_double[patient][gene]
+        patient_score_list.append(float(phen2disease_double[patient][gene]))
+    patient_score_mean = np.array(patient_score_list).mean()
+    patient_score_std = np.std(np.array(patient_score_list), ddof=1)
+    for gene in phen2disease_double[patient]:
+        phen2disease_double_zscore[patient][gene] = float(
+            (float(phen2disease_double[patient][gene]) - patient_score_mean) / patient_score_std)
 
-######diseasescore2genescore_json
+
+phen2disease_zscore_integrated_sum = defaultdict(dict)
+
+for patient in phen2disease_double_zscore:
+    for gene in phen2disease_double_zscore[patient]:
+        phen2disease_zscore_integrated_sum[patient][gene] = phen2disease_patient_zscore[patient][gene] + \
+                                                            phen2disease_double_zscore[patient][gene]
+
+######diseasezscore2genezscore_json
 
 with open("../../../../data/association/Gene-Disease/disease2genecard2021.json") as fp:
         disease2card = json.load(fp)
@@ -61,7 +97,7 @@ with open("../../../../data/association/Gene-Disease/genecard2disease2021.json")
 
     ########################################################################################
 
-similarity_matrix = phen2disease_integrated_sum
+similarity_matrix = phen2disease_zscore_integrated_sum
 
 similarity_matrix_combine = defaultdict(dict)
 similarity_matrix_new = defaultdict(dict)

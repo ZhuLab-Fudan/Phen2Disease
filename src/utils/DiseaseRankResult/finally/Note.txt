@@ -1,0 +1,1 @@
+Here we get the final json file of the integrated of disease ranking results
