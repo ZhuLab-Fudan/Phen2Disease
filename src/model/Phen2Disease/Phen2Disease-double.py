@@ -174,12 +174,13 @@ term_subontology_list=[]
 for term in get_subontology(ontology_t1.version):
     term_subontology_list.append(term)
 for term in term_subontology_list:
-    if term=='HP:0032223':
-        continue
-    if term=='HP:0032443':
-        continue
-    else:
-        ic_term_subontology_list.append(ic[term])
+    # if term=='HP:0032223':
+    #     continue
+    # if term=='HP:0032443':
+    #     continue
+    # else:
+    #     ic_term_subontology_list.append(ic[term])
+    ic_term_subontology_list.append(ic[term])
 epsilon=max(ic_term_subontology_list)
 
 # # ########read similarity
