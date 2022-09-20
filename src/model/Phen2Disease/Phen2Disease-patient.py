@@ -237,6 +237,8 @@ for file in files_patient_folder:
         for term in patient_term_list:
             # children_set=ontology_t1.get_descendants(term)
             judgment = 0
+            if term in inheritance_list:
+                judgment = judgment + 1
             term_patient_filter_temp_list = []
             for term_d in ontology_t1.get_descendants(term):
                 term_patient_filter_temp_list.append(term_d)
