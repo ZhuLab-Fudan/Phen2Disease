@@ -135,12 +135,17 @@ similarity = similarity.unstack()
 # write to the json file
 similarity = similarity.to_dict(orient="index")
 
+path_similarity = "../../../data/matrix"
+
+with open(path_similarity + "/" +"ic_similarity_matrix.json.json", 'w') as fp:
+    json.dump(similarity, fp, indent=2)
 # # ########read similarity
 # path_similarity = "../../../data/matrix"
 #
 # with open(path_similarity+"/"+"ic_similarity_matrix.json") as fp:
 #     similarity = json.load(fp)
-#
+
+
 
 
 #########inheritance set
