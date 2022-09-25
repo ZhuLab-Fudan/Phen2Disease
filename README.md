@@ -42,15 +42,29 @@ Turn to src/utils/GeneRankResult/finally folder you can get the final json file 
 
 For the Data Cohorts 1-6, please see:
 
-Cohort 1: https://zenodo.org/record/3905420
+Cohort 1 [1]: https://zenodo.org/record/3905420
 
-Cohort 2: https://academic.oup.com/nargab/article/2/2/lqaa032/5843800#supplementary-data
+Cohort 2 [2]: https://academic.oup.com/nargab/article/2/2/lqaa032/5843800#supplementary-data
 
-Cohort 3: https://ars.els-cdn.com/content/image/1-s2.0-S0002929721004638-mmc3.xlsx
+Cohort 3 [3]: https://ars.els-cdn.com/content/image/1-s2.0-S0002929721004638-mmc3.xlsx
 
-Cohort 4: https://ars.els-cdn.com/content/image/1-s2.0-S0002929721004638-mmc4.xlsx
+Cohort 4 [3]: https://ars.els-cdn.com/content/image/1-s2.0-S0002929721004638-mmc4.xlsx
 
-Cohort 5: https://ars.els-cdn.com/content/image/1-s2.0-S0002929721004638-mmc5.xlsx
+Cohort 5 [3]: https://ars.els-cdn.com/content/image/1-s2.0-S0002929721004638-mmc5.xlsx
 
-Cohort 6: https://academic.oup.com/bib/article/23/2/bbac019/6521702?login=true#supplementary-data
+Cohort 6 [4]: https://academic.oup.com/bib/article/23/2/bbac019/6521702?login=true#supplementary-data
+
+# References
+
+[1] Robinson PN, Ravanmehr V, Jacobsen JOB, et al. Interpretable Clinical Genomics with a Likelihood Ratio Paradigm. Am J Hum Genet. 2020 Sep 3;107(3):403-417.
+
+[2] Zhao, M., Havrilla, et al. (2020). Phen2Gene: rapid phenotype-driven gene prioritization for rare diseases. NAR genomics and bioinformatics, 2(2), lqaa032.
+
+[3] Chen, Z., Zheng, et al. (2022). PhenoApt leverages clinical expertise to prioritize candidate genes via machine learning. The American Journal of Human Genetics.
+
+[4] Yuan X, Wang J, Dai B, et al. Evaluation of phenotype-driven gene prioritization methods for Mendelian diseases. Brief Bioinform. 2022 Mar 10;23(2):bbac019.
+
+# Citation
+
+Zhai, W., Huang, X., Shen, N., & Zhu, S. Phen2Disease: A Phenotype-driven Semantic Similarity-based Integrated Model for Disease and Gene Prioritization. In submission.
 
