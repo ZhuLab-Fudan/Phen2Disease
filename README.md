@@ -60,7 +60,7 @@ Cohort 6 [4]: https://academic.oup.com/bib/article/23/2/bbac019/6521702?login=tr
 
 [2] Zhao, M., Havrilla, et al. (2020). Phen2Gene: rapid phenotype-driven gene prioritization for rare diseases. NAR genomics and bioinformatics, 2(2), lqaa032.
 
-[3] Chen, Z., Zheng, et al. (2022). PhenoApt leverages clinical expertise to prioritize candidate genes via machine learning. The American Journal of Human Genetics.
+[3] Chen, Z., Zheng, et al. (2022). PhenoApt leverages clinical expertise to prioritize candidate genes via machine learning. Am J Hum Genet. 2022 Feb 3;109(2):270-281.
 
 [4] Yuan X, Wang J, Dai B, et al. Evaluation of phenotype-driven gene prioritization methods for Mendelian diseases. Brief Bioinform. 2022 Mar 10;23(2):bbac019.
 
