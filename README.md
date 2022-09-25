@@ -40,7 +40,7 @@ Turn to src/utils/GeneRankResult/finally folder you can get the final json file 
 
 # Data Cohort
 
-For the Data Cohorts 1-6, please see£º
+For the Data Cohorts 1-6, please see:
 
 Cohort 1: https://zenodo.org/record/3905420
 
