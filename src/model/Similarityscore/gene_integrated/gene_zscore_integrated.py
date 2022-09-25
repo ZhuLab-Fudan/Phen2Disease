@@ -127,7 +127,7 @@ for patient in similarity_matrix_new:
     for genecard in similarity_matrix_new[patient]:
         similarity_matrix_combine[patient][genecard] = similarity_matrix_new[patient][genecard]
 
-with open(path_finally + "/" + "Phen2Disease_integrated_result.json", 'w') as fp:
+with open(path_gene_finally + "/" + "Phen2Disease_integrated_result.json", 'w') as fp:
     json.dump(similarity_matrix_combine, fp, indent=2)
 
 

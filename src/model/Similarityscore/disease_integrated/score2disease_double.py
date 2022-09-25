@@ -6,27 +6,12 @@ import pandas as pd
 import pickle
 from collections import defaultdict
 from functools import reduce
-from collections import defaultdict
 from sklearn.preprocessing import MultiLabelBinarizer
-import json
 import pickle
 from multiprocessing import Pool
-# import pandas as pd
 import numpy as np
-from sklearn.metrics import roc_auc_score, average_precision_score, f1_score
-
 import math
-from collections import defaultdict
-from functools import reduce
-from ontology import HumanPhenotypeOntology
-from ontology import get_root, get_subontology
 import os
-from collections import defaultdict
-import json
-import pickle
-from functools import reduce
-import numpy as np
-import pandas as pd
 
 
 path_base="../../../../src/result/diseaserank"

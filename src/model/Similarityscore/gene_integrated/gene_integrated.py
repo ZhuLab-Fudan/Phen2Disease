@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import json
 import pandas as pd
 
 from collections import defaultdict
@@ -11,16 +10,12 @@ import json
 # import pandas as pd
 import numpy as np
 
-
-import os
-from collections import defaultdict
 import json
 import pickle
 # import pandas as pd
 import math
 
 import os
-from collections import defaultdict
 import json
 
 
@@ -91,7 +86,7 @@ for patient in similarity_matrix_new:
     for genecard in similarity_matrix_new[patient]:
         similarity_matrix_combine[patient][genecard] = similarity_matrix_new[patient][genecard]
 
-with open(path_finally + "/" + "Phen2Disease_integrated_result.json", 'w') as fp:
+with open(path_gene_finally + "/" + "Phen2Disease_integrated_result.json", 'w') as fp:
     json.dump(similarity_matrix_combine, fp, indent=2)
 
 

@@ -37,3 +37,20 @@ In src/result/diseaserank/result folder you can get the json file of diseases pr
 (2) Run gene_integrated.py
 
 Turn to src/utils/GeneRankResult/finally folder you can get the final json file of the integrated of gene ranking results (Phen2Disease_integrated_result.json)
+
+# Data Cohort
+
+For the Data Cohorts 1-6, please see£º
+
+Cohort 1: https://zenodo.org/record/3905420
+
+Cohort 2: https://academic.oup.com/nargab/article/2/2/lqaa032/5843800#supplementary-data
+
+Cohort 3: https://ars.els-cdn.com/content/image/1-s2.0-S0002929721004638-mmc3.xlsx
+
+Cohort 4: https://ars.els-cdn.com/content/image/1-s2.0-S0002929721004638-mmc4.xlsx
+
+Cohort 5: https://ars.els-cdn.com/content/image/1-s2.0-S0002929721004638-mmc5.xlsx
+
+Cohort 6: https://academic.oup.com/bib/article/23/2/bbac019/6521702?login=true#supplementary-data
+

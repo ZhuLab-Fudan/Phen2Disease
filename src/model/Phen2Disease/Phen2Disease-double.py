@@ -1,32 +1,18 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import json
 import pandas as pd
 import pickle
-from collections import defaultdict
 from functools import reduce
 from collections import defaultdict
 from sklearn.preprocessing import MultiLabelBinarizer
-import json
-import pickle
 from multiprocessing import Pool
-# import pandas as pd
 import numpy as np
-from sklearn.metrics import roc_auc_score, average_precision_score, f1_score
-
 import math
-from collections import defaultdict
-from functools import reduce
 from ontology import HumanPhenotypeOntology
 from ontology import get_root, get_subontology
 import os
-from collections import defaultdict
 import json
-import pickle
-from functools import reduce
-import numpy as np
-import pandas as pd
 
 
 path_config="../../../config/preprocessing"
@@ -140,6 +126,11 @@ for term in term_list_sets:
     ancestors[term] = ontology_t1.get_ancestors([term])
                       # - {get_root()} -set(get_subontology(ontology_t1.version))
 #
+##
+#The first run will calculate the similarity matrix of IC
+#After that, the similarity matrix can be placed in... /... /... /data/
+# and then read similarity matrix directly
+
 similarity = pd.DataFrame(0, index=term_list_sets, columns=term_list_sets)
 similarity = similarity.stack()
 similarity.loc[:] = similarity.index.map(lin_sim)
@@ -147,7 +138,13 @@ similarity.loc[:] = similarity.index.map(lin_sim)
 similarity = similarity.unstack()
 # write to the json file
 similarity = similarity.to_dict(orient="index")
-# total_num=len(common_terms)
+
+# # ########read similarity
+# path_similarity = "../../../data/matrix"
+#
+# with open(path_similarity+"/"+"ic_similarity_matrix.json") as fp:
+#     similarity = json.load(fp)
+#
 
 
 #########inheritance set
@@ -174,21 +171,16 @@ term_subontology_list=[]
 for term in get_subontology(ontology_t1.version):
     term_subontology_list.append(term)
 for term in term_subontology_list:
-    # if term=='HP:0032223':
-    #     continue
-    # if term=='HP:0032443':
-    #     continue
-    # else:
-    #     ic_term_subontology_list.append(ic[term])
-    ic_term_subontology_list.append(ic[term])
+    if term=='HP:0032223':
+        continue
+    if term=='HP:0032443':
+        continue
+    else:
+        ic_term_subontology_list.append(ic[term])
+    # ic_term_subontology_list.append(ic[term])
 epsilon=max(ic_term_subontology_list)
 
-# # ########read similarity
-# path_similarity = "../../../data/matrix"
-#
-# with open(path_similarity+"/"+"ic_similarity_matrix.json") as fp:
-#     similarity = json.load(fp)
-#
+
 
 
 for file in files_patient_folder:

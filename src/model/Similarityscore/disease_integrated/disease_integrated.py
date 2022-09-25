@@ -13,15 +13,10 @@ import numpy as np
 
 
 import os
-from collections import defaultdict
-import json
 import pickle
 # import pandas as pd
 import math
 
-import os
-from collections import defaultdict
-import json
 
 
 path_base="../../../../src/result/diseaserank"

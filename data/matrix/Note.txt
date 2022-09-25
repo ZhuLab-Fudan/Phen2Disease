@@ -1,0 +1,3 @@
+#The first run will calculate the similarity matrix of IC
+#After that, the similarity matrix can be placed here
+# and then read similarity matrix directly
