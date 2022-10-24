@@ -218,7 +218,7 @@ for file in files_patient_folder:
             if term in inheritance_list:
                 judgment = judgment + 1
             term_disease_filter_temp_list = []
-            for term_d in ontology_t1.get_descendants(term):
+            for term_d in ontology_t1.get_descendants([term]):
                 term_disease_filter_temp_list.append(term_d)
             for term_f in disease_term_list:
                 if term_f in term_disease_filter_temp_list:
@@ -234,7 +234,7 @@ for file in files_patient_folder:
             if term in inheritance_list:
                 judgment = judgment + 1
             term_patient_filter_temp_list = []
-            for term_d in ontology_t1.get_descendants(term):
+            for term_d in ontology_t1.get_descendants([term]):
                 term_patient_filter_temp_list.append(term_d)
             for term_f in patient_term_list:
                 if term_f in term_patient_filter_temp_list:
