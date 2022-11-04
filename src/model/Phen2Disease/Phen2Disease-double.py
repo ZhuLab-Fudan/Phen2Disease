@@ -131,23 +131,23 @@ for term in term_list_sets:
 #After that, the similarity matrix can be placed in... /... /... /data/
 # and then read similarity matrix directly
 
-similarity = pd.DataFrame(0, index=term_list_sets, columns=term_list_sets)
-similarity = similarity.stack()
-similarity.loc[:] = similarity.index.map(lin_sim)
-
-similarity = similarity.unstack()
-# write to the json file
-similarity = similarity.to_dict(orient="index")
-
-path_similarity = "../../../data/matrix"
-
-with open(path_similarity + "/" +"ic_similarity_matrix.json.json", 'w') as fp:
-    json.dump(similarity, fp, indent=2)
-# # ########read similarity
+# similarity = pd.DataFrame(0, index=term_list_sets, columns=term_list_sets)
+# similarity = similarity.stack()
+# similarity.loc[:] = similarity.index.map(lin_sim)
+#
+# similarity = similarity.unstack()
+# # write to the json file
+# similarity = similarity.to_dict(orient="index")
+#
 # path_similarity = "../../../data/matrix"
 #
-# with open(path_similarity+"/"+"ic_similarity_matrix.json") as fp:
-#     similarity = json.load(fp)
+# with open(path_similarity + "/" +"ic_similarity_matrix.json.json", 'w') as fp:
+#     json.dump(similarity, fp, indent=2)
+# ########read similarity
+path_similarity = "../../../data/matrix"
+
+with open(path_similarity+"/"+"lin_similarity_matrix2021.json") as fp:
+    similarity = json.load(fp)
 
 
 
