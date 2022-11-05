@@ -25,6 +25,43 @@ ontology_t1 = HumanPhenotypeOntology(config["ontology"]["time1"]["path"],
                                      version=config["ontology"]["time1"]["version"])
 
 
+
+# ########read association
+path_association="../../../data/association/Disease-Hpo"
+with open(path_association+"/"+"disease2hpo20210413.json") as fp:
+    new_annotation = json.load(fp)
+
+
+##
+#The first run will calculate the similarity matrix of IC
+#After that, the similarity matrix can be placed in... /... /... /data/
+# and then read similarity matrix directly
+
+# similarity = pd.DataFrame(0, index=term_list_sets, columns=term_list_sets)
+# similarity = similarity.stack()
+# similarity.loc[:] = similarity.index.map(lin_sim)
+#
+# similarity = similarity.unstack()
+# # write to the json file
+# similarity = similarity.to_dict(orient="index")
+
+# path_similarity = "../../../data/matrix"
+#
+# with open(path_similarity + "/" +"ic_similarity_matrix.json.json", 'w') as fp:
+#     json.dump(similarity, fp, indent=2)
+# ########read similarity
+path_similarity = "../../../data/matrix"
+with open(path_similarity+"/"+"lin_similarity_matrix2021.json") as fp:
+    similarity = json.load(fp)
+
+# ########read patient_data
+path_disease = "../../../data/diseaselist"
+path_patient="../../../data/patient"
+path_single = "../../../src/result/diseaserank/disease"
+
+
+
+
 # global variable, ancestors of each HPO term
 ancestors = dict()
 # global variable, frequency of terms
@@ -60,9 +97,6 @@ def lin_sim(x):
     return sim
 
 
-path_association="../../../data/association/Disease-Hpo"
-with open(path_association+"/"+"disease2hpo20210413.json") as fp:
-    new_annotation = json.load(fp)
 
 
 propagated_annotation = dict()
@@ -108,46 +142,6 @@ ic = -freq.apply(math.log2)
 
 ########################################################################################
 
-path_disease = "../../../data/diseaselist"
-path_patient="../../../data/patient"
-path_single = "../../../src/result/diseaserank/disease"
-
-#read path
-files_disease_folder = os.listdir(path_disease)
-files_patient_folder = os.listdir(path_patient)
-
-term_list_sets=set(term_list)
-
-for term in term_list_sets:
-    ancestors[term] = ontology_t1.get_ancestors([term])
-                      # - {get_root()} -set(get_subontology(ontology_t1.version))
-#
-##
-#The first run will calculate the similarity matrix of IC
-#After that, the similarity matrix can be placed in... /... /... /data/
-# and then read similarity matrix directly
-
-# similarity = pd.DataFrame(0, index=term_list_sets, columns=term_list_sets)
-# similarity = similarity.stack()
-# similarity.loc[:] = similarity.index.map(lin_sim)
-#
-# similarity = similarity.unstack()
-# # write to the json file
-# similarity = similarity.to_dict(orient="index")
-
-# path_similarity = "../../../data/matrix"
-#
-# with open(path_similarity + "/" +"ic_similarity_matrix.json.json", 'w') as fp:
-#     json.dump(similarity, fp, indent=2)
-# ########read similarity
-path_similarity = "../../../data/matrix"
-
-with open(path_similarity+"/"+"lin_similarity_matrix2021.json") as fp:
-    similarity = json.load(fp)
-
-
-
-
 #########inheritance set
 sp_term="HP:0000118"
 inheritance_list=[]
@@ -183,6 +177,16 @@ epsilon=max(ic_term_subontology_list)
 
 
 
+#read path
+files_disease_folder = os.listdir(path_disease)
+files_patient_folder = os.listdir(path_patient)
+
+term_list_sets=set(term_list)
+
+for term in term_list_sets:
+    ancestors[term] = ontology_t1.get_ancestors([term])
+                      # - {get_root()} -set(get_subontology(ontology_t1.version))
+#
 
 for file in files_patient_folder:
     file1= str(file)
@@ -213,7 +217,7 @@ for file in files_patient_folder:
         # disease_term_list
         # patient_term_list
         for term in disease_term_list:
-            # children_set=ontology_t1.get_descendants(term)
+
             judgment = 0
             if term in inheritance_list:
                 judgment = judgment + 1
@@ -229,7 +233,7 @@ for file in files_patient_folder:
                 disease_term_list_filter.append(term)
 
         for term in patient_term_list:
-            # children_set=ontology_t1.get_descendants(term)
+
             judgment = 0
             if term in inheritance_list:
                 judgment = judgment + 1
@@ -251,11 +255,11 @@ for file in files_patient_folder:
         for term_1 in similarity:
             if term_1 in disease_term_list:
                 score_term_list = []
-                # weight_term_list = []
+
                 for term_2 in similarity[term_1]:
                     if term_2 in patient_term_list:
                         score_term_list.append(similarity[term_1][term_2])
-                        # weight_term_list.append(ic[term_1] * ic[term_2])
+
                 if np.array(score_term_list).shape[0] == 0:
                     max_score = max_score + 0
                 else:

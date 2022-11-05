@@ -46,6 +46,8 @@ for patient in phen2disease_double:
         phen2disease_integrated_sum[patient][gene] = phen2disease_patient[patient][gene] + \
                                                             phen2disease_double[patient][gene]
 
+
+
 ######diseasescore2genescore_json
 
 with open("../../../../data/association/Gene-Disease/disease2genecard2021.json") as fp:
@@ -54,7 +56,7 @@ with open("../../../../data/association/Gene-Disease/disease2genecard2021.json")
 with open("../../../../data/association/Gene-Disease/genecard2disease2021.json") as fp:
         card2disease = json.load(fp)
 
-    ########################################################################################
+########################################################################################
 
 similarity_matrix = phen2disease_integrated_sum
 
@@ -82,13 +84,27 @@ for patient in similarity_matrix_new:
             genescore = np.array(score_list).max()
         similarity_matrix_new[patient][genecard] = similarity_matrix_new[patient][genecard] + genescore
 
+
 for patient in similarity_matrix_new:
+    patient_name=str(patient)
+
+    patient_rank_df = pd.DataFrame()
+    patient_gene_list = []
+    patient_score_list=[]
     for genecard in similarity_matrix_new[patient]:
+        patient_gene_list.append(genecard)
+        patient_score_list.append(similarity_matrix_new[patient][genecard])
+
         similarity_matrix_combine[patient][genecard] = similarity_matrix_new[patient][genecard]
+
+    patient_rank_df["gene"]=patient_gene_list
+    patient_rank_df["score"]=patient_score_list
+    patient_rank_df.sort_values(by="score", inplace=True, ascending=False)
+    patient_rank_df.to_csv(path_gene_finally + "/" + patient_name+".csv",index=None)
+
+
 
 with open(path_gene_finally + "/" + "Phen2Disease_integrated_result.json", 'w') as fp:
     json.dump(similarity_matrix_combine, fp, indent=2)
-
-
 
 

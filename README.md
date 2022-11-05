@@ -6,6 +6,8 @@ Phen2Disease: A Phenotype-driven Semantic Similarity-based Integrated Model for 
 
 Extract data/diseaselist.rar file to the current folder
 
+Extract data/matrix/lin_similarity_matrix2021.json.gz file to the current folder
+
 Place the patient HPO files under data/patient
 
 Turn to src/model/Phen2Disease folder and run:
@@ -24,7 +26,7 @@ In src/result/diseaserank/result folder you can get the json file of diseases pr
 
 (2) Run disease_integrated.py
 
-Turn to src/utils/DiseaseRankResult/finally folder you can get the final json file of the integrated of disease ranking results (Phen2Disease_integrated_result.json)
+Turn to src/utils/DiseaseRankResult/finally folder you can get the final file of the integrated of disease ranking results (Phen2Disease_integrated_result.json)
 
 # Gene Prioritization
 
@@ -36,7 +38,7 @@ In src/result/diseaserank/result folder you can get the json file of diseases pr
 
 (2) Run gene_integrated.py
 
-Turn to src/utils/GeneRankResult/finally folder you can get the final json file of the integrated of gene ranking results (Phen2Disease_integrated_result.json)
+Turn to src/utils/GeneRankResult/finally folder you can get the final file of the integrated of gene ranking results (Phen2Disease_integrated_result.json)
 
 # Data Cohort
 
@@ -58,9 +60,9 @@ Cohort 6 [4]: https://academic.oup.com/bib/article/23/2/bbac019/6521702?login=tr
 
 [1] Robinson PN, Ravanmehr V, Jacobsen JOB, et al. Interpretable Clinical Genomics with a Likelihood Ratio Paradigm. Am J Hum Genet. 2020 Sep 3;107(3):403-417.
 
-[2] Zhao, M., Havrilla, et al. (2020). Phen2Gene: rapid phenotype-driven gene prioritization for rare diseases. NAR genomics and bioinformatics, 2(2), lqaa032.
+[2] Zhao, M., Havrilla, et al. Phen2Gene: rapid phenotype-driven gene prioritization for rare diseases. NAR Genom Bioinform. 2020 Jun;2(2):lqaa032.
 
-[3] Chen, Z., Zheng, et al. (2022). PhenoApt leverages clinical expertise to prioritize candidate genes via machine learning. Am J Hum Genet. 2022 Feb 3;109(2):270-281.
+[3] Chen, Z., Zheng, et al. PhenoApt leverages clinical expertise to prioritize candidate genes via machine learning. Am J Hum Genet. 2022 Feb 3;109(2):270-281.
 
 [4] Yuan X, Wang J, Dai B, et al. Evaluation of phenotype-driven gene prioritization methods for Mendelian diseases. Brief Bioinform. 2022 Mar 10;23(2):bbac019.
 
