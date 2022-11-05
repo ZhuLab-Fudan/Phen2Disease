@@ -26,7 +26,7 @@ In src/result/diseaserank/result folder you can get the json file of diseases pr
 
 (2) Run disease_integrated.py
 
-Turn to src/utils/DiseaseRankResult/finally folder you can get the final file of the integrated of disease ranking results (Phen2Disease_integrated_result.json)
+Turn to src/utils/DiseaseRankResult/finally folder you can get the final file of the integrated of disease ranking results
 
 # Gene Prioritization
 
@@ -38,7 +38,7 @@ In src/result/diseaserank/result folder you can get the json file of diseases pr
 
 (2) Run gene_integrated.py
 
-Turn to src/utils/GeneRankResult/finally folder you can get the final file of the integrated of gene ranking results (Phen2Disease_integrated_result.json)
+Turn to src/utils/GeneRankResult/finally folder you can get the final file of the integrated of gene ranking results
 
 # Data Cohort
 
@@ -65,6 +65,21 @@ Cohort 6 [4]: https://academic.oup.com/bib/article/23/2/bbac019/6521702?login=tr
 [3] Chen, Z., Zheng, et al. PhenoApt leverages clinical expertise to prioritize candidate genes via machine learning. Am J Hum Genet. 2022 Feb 3;109(2):270-281.
 
 [4] Yuan X, Wang J, Dai B, et al. Evaluation of phenotype-driven gene prioritization methods for Mendelian diseases. Brief Bioinform. 2022 Mar 10;23(2):bbac019.
+
+# Web Resources for Comparison Methods
+
+AMELIE: https://amelie.stanford.edu
+
+LIRICAL: https://lirical.readthedocs.io/en/latest
+
+PhenoApt: https://www.phenoapt.org
+
+Phrank package: https://pypi.org/project/phrank
+
+Phenolyzer: https://phenolyzer.wglab.org
+
+Phenolyzer package: https://github.com/WGLab/phenolyzer
+
 
 # Citation
 
