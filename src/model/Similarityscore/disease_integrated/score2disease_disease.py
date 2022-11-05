@@ -17,7 +17,7 @@ path_base="../../../../src/result/diseaserank"
 
 path_result=path_base+"/"+"result"
 ########################################################################################
-path_finally="../../../../src/utils/DiseaseRankResult/finally"
+
 path_patient_score = path_base+"/"+"disease"
 files_folder = os.listdir(path_patient_score)
 
@@ -44,8 +44,7 @@ for file1 in files_folder:
         for disease in similarity_matrix_new[patient]:
             similarity_matrix_combine[patient][disease] = similarity_matrix_new[patient][disease]
 
-# with open(path_finally + "/" + "Phen2Disease_disease_result.json", 'w') as fp:
-#     json.dump(similarity_matrix_combine, fp, indent=2)
+
 
 with open(path_result + "/" + "Phen2Disease_disease_result.json", 'w') as fp:
     json.dump(similarity_matrix_combine, fp, indent=2)
