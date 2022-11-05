@@ -76,6 +76,8 @@ PhenoApt: https://www.phenoapt.org
 
 Phrank package: https://pypi.org/project/phrank
 
+Phen2Gene: https://phen2gene.wglab.org
+
 Phenolyzer: https://phenolyzer.wglab.org
 
 Phenolyzer package: https://github.com/WGLab/phenolyzer
