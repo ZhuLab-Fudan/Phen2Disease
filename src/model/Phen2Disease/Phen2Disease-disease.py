@@ -51,7 +51,7 @@ with open(path_association+"/"+"disease2hpo20210413.json") as fp:
 #     json.dump(similarity, fp, indent=2)
 # ########read similarity
 path_similarity = "../../../data/matrix"
-with open(path_similarity+"/"+"lin_similarity_matrix2021.json") as fp:
+with open(path_similarity+"/"+"lin_similarity_matrix.json") as fp:
     similarity = json.load(fp)
 
 # ########read patient_data

@@ -6,7 +6,7 @@ Phen2Disease: A Phenotype-driven Semantic Similarity-based Integrated Model for 
 
 Extract data/diseaselist.rar file to the current folder
 
-Extract data/matrix/lin_similarity_matrix2021.json.gz file to the current folder
+Extract data/matrix/lin_similarity_matrix.json.gz file to the current folder
 
 Place the patient HPO files under data/patient
 
