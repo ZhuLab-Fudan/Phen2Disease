@@ -2,47 +2,50 @@
 
 Phen2Disease: A Phenotype-driven Semantic Similarity-based Integrated Model for Disease and Gene Prioritization
 
-# Precessing
+Please follow the following steps to run the three examples provided in the date/patient folder (or Place your patient HPO files into the folder data/patient folder). 
 
-Extract data/diseaselist.rar file to the current folder
 
-Extract data/matrix/lin_similarity_matrix.json.gz file to the current folder
+# PreProcessing
 
-Place the patient HPO files under data/patient
+Extract the data/diseaselist.rar file to a current folder where you choose
 
-Turn to src/model/Phen2Disease folder and run:
+Extract the data/matrix/lin_similarity_matrix.json.gz file to your chosen current folder
 
-(1) Phen2Disease-patient.py, Phen2Disease-double.py, (Phen2Disease-disease.py (Can be run optionally))
+Go to the src/model/Phen2Disease folder:
 
-(2) Get the disease sorting results of each case in the corresponding folder of src/result/diseaserank folder
+(1) run Phen2Disease-patient.py, and Phen2Disease-double.py, (Phen2Disease-disease.py can be run optionally)
+
+(2) retrieve the disease sorting results of each case from the corresponding folder of src/result/diseaserank 
+
 
 # Disease Prioritization
 
-(1) Turn to src/model/Similarityscore/disease_integrated folder in order to run:
+(1) Go to the folder of src/model/Similarityscore/disease_integrated folder and run:
 
-score2disease_patient.py, score2disease_double.py , (score2disease_disease.py (Can be run optionally))
+score2disease_patient.py, and score2disease_double.py, (score2disease_disease.py can be run optionally)
 
-In src/result/diseaserank/result folder you can get the json file of diseases prioritization files after merging cases
+In the src/result/diseaserank/result folder, and you can get the json file of diseases prioritization files after merging cases.
 
 (2) Run disease_integrated.py
 
-Turn to src/utils/DiseaseRankResult/finally folder you can get the final file of the integrated of disease ranking results
+Go to the src/utils/DiseaseRankResult/finally folder, and you can get final files of the integrated disease ranking results.
+
 
 # Gene Prioritization
 
-(1) Turn to src/model/Similarityscore/gene_integrated folder in order to run:
+(1) Go to the src/model/Similarityscore/gene_integrated folder and run:
 
-score2disease_patient.py, score2disease_double.py , (score2disease_disease.py (Can be run optionally))
+score2disease_patient.py, and score2disease_double.py, (score2disease_disease.py can be run optionally))
 
-In src/result/diseaserank/result folder you can get the json file of diseases prioritization files after merging cases
+In the src/result/diseaserank/result folder, you can get the json file of diseases prioritization files after merging cases.
 
 (2) Run gene_integrated.py
 
-Turn to src/utils/GeneRankResult/finally folder you can get the final file of the integrated of gene ranking results
+Go to the src/utils/GeneRankResult/finally folder, and you can get final files of the integrated gene ranking results.
 
-# Data Cohort
+# Data Cohorts
 
-For the Data Cohorts 1-6, please see:
+For the Data Cohorts 1-6, you can find them at the following sites:
 
 Cohort 1 [1]: https://zenodo.org/record/3905420
 
