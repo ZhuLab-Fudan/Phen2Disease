@@ -18,23 +18,41 @@ import pickle
 import math
 
 
+#####The path where the project is placed
+path_main="../../../.."
 
-path_base="../../../../src/result/diseaserank"
 
-path_result=path_base+"/"+"result"
+
+########patient2disease_json
+
+path_disease_result=path_main+"/"+"src/result/diseaserank/result"
+
 ########################################################################################
-path_disease_finally="../../../../src/utils/DiseaseRankResult/finally"
+path_disease_finally=path_main+"/"+"src/utils/GeneRankResult/finally"
+
+def mkdir(path):
+    folder = os.path.exists(path)
+
+    if not folder:
+        os.makedirs(path)  # makedirs 创建文件时如果路径不存在会创建这个路径
+        print("---  new folder...  ---")
+
+    else:
+        print("---  The folder already exists  ---")
+
+file_path_disease_finally = path_disease_finally
+mkdir(file_path_disease_finally)
 
 
-with open(path_result + "/" + "Phen2Disease_patient_result.json") as fp:
+
+with open(path_disease_result + "/" + "Phen2Disease_patient_result.json") as fp:
     phen2disease_patient = json.load(fp)
 
-with open(path_result + "/" + "Phen2Disease_double_result.json") as fp:
+with open(path_disease_result + "/" + "Phen2Disease_double_result.json") as fp:
     phen2disease_double = json.load(fp)
 
-# with open(path_result + "/" + "Phen2Disease_disease_result.json") as fp:
+# with open(path_disease_result + "/" + "Phen2Disease_disease_result.json") as fp:
 #     phen2disease_disease = json.load(fp)
-
 
 phen2disease_integrated_sum = defaultdict(dict)
 

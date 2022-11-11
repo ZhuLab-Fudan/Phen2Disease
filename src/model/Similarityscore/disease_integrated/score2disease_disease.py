@@ -13,12 +13,28 @@ import numpy as np
 import math
 import os
 
-path_base="../../../../src/result/diseaserank"
+#####The path where the project is placed
+path_main="../../../.."
 
-path_result=path_base+"/"+"result"
+
+path_result=path_main+"/"+"src/result/diseaserank/result"
+
+def mkdir(path):
+    folder = os.path.exists(path)
+
+    if not folder:
+        os.makedirs(path)  # makedirs 创建文件时如果路径不存在会创建这个路径
+        print("---  new folder...  ---")
+
+    else:
+        print("---  The folder already exists  ---")
+
+file_path_result = path_result
+mkdir(file_path_result)
+
 ########################################################################################
 
-path_patient_score = path_base+"/"+"disease"
+path_patient_score = path_main+"/"+"src/result/diseaserank/disease"
 files_folder = os.listdir(path_patient_score)
 
 similarity_matrix_combine = defaultdict(dict)

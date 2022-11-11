@@ -14,7 +14,11 @@ import os
 import json
 
 
-path_config="../../../config/preprocessing"
+#####The path where the project is placed
+path_main="../../.."
+
+
+path_config= path_main + "/" + "config/preprocessing"
 #
 with open(path_config+"/"+"split_dataset_lableler.json") as fp:
     config= json.load(fp)
@@ -27,7 +31,7 @@ ontology_t1 = HumanPhenotypeOntology(config["ontology"]["time1"]["path"],
 
 
 # ########read association
-path_association="../../../data/association/Disease-Hpo"
+path_association=path_main+"/"+"data/association/Disease-Hpo"
 with open(path_association+"/"+"disease2hpo20210413.json") as fp:
     new_annotation = json.load(fp)
 
@@ -50,15 +54,27 @@ with open(path_association+"/"+"disease2hpo20210413.json") as fp:
 # with open(path_similarity + "/" +"ic_similarity_matrix.json.json", 'w') as fp:
 #     json.dump(similarity, fp, indent=2)
 # ########read similarity
-path_similarity = "../../../data/matrix"
+path_similarity = path_main+"/"+"data/matrix"
 with open(path_similarity+"/"+"lin_similarity_matrix.json") as fp:
     similarity = json.load(fp)
 
 # ########read patient_data
-path_disease = "../../../data/diseaselist"
-path_patient="../../../data/patient"
-path_single = "../../../src/result/diseaserank/disease"
+path_disease = path_main + "/" + "data/diseaselist"
+path_patient=path_main + "/" + "data/patient"
+path_single = path_main + "/" + "src/result/diseaserank/disease"
 
+def mkdir(path):
+    folder = os.path.exists(path)
+
+    if not folder:
+        os.makedirs(path)  # makedirs 创建文件时如果路径不存在会创建这个路径
+        print("---  new folder...  ---")
+
+    else:
+        print("---  The folder already exists  ---")
+
+file_path_single = path_single
+mkdir(path_single)
 
 
 
