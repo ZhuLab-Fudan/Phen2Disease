@@ -28,7 +28,7 @@ In the src/result/diseaserank/result folder, and you can get the json file of di
 
 (2) Run disease_integrated.py
 
-Go to the src/utils/DiseaseRankResult/finally folder, and you can get final files of the integrated disease ranking results.
+Go to the src/utils/DiseaseRankResult folder, and you can get final files of the integrated disease ranking results.
 
 
 # Gene Prioritization
@@ -41,7 +41,7 @@ In the src/result/diseaserank/result folder, you can get the json file of diseas
 
 (2) Run gene_integrated.py
 
-Go to the src/utils/GeneRankResult/finally folder, and you can get final files of the integrated gene ranking results.
+Go to the src/utils/GeneRankResult folder, and you can get final files of the integrated gene ranking results.
 
 # Data Cohorts
 

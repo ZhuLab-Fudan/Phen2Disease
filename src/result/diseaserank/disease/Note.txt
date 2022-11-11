@@ -1,1 +1,0 @@
-Here we get the disease sorting results by using Phen2Disease-disease.py

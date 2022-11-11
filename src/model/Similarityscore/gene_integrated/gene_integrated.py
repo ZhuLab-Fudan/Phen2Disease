@@ -19,14 +19,31 @@ import os
 import json
 
 
+#####The path where the project is placed
+path_main="../../../.."
+
+
 
 ########patient2disease_json
-path_base="../../../../src/result"
 
-path_disease_result=path_base+"/"+"diseaserank/result"
-path_gene_result=path_base+"/"+"generank/result"
+path_disease_result=path_main+"/"+"src/result/diseaserank/result"
+
 ########################################################################################
-path_gene_finally="../../../../src/utils/GeneRankResult/finally"
+path_gene_finally=path_main+"/"+"src/utils/GeneRankResult/finally"
+
+def mkdir(path):
+    folder = os.path.exists(path)
+
+    if not folder:
+        os.makedirs(path)  # makedirs 创建文件时如果路径不存在会创建这个路径
+        print("---  new folder...  ---")
+
+    else:
+        print("---  The folder already exists  ---")
+
+file_path_gene_finally = path_gene_finally
+mkdir(file_path_gene_finally)
+
 
 
 with open(path_disease_result + "/" + "Phen2Disease_patient_result.json") as fp:
@@ -50,10 +67,10 @@ for patient in phen2disease_double:
 
 ######diseasescore2genescore_json
 
-with open("../../../../data/association/Gene-Disease/disease2genecard2021.json") as fp:
+with open(path_main+"/"+"data/association/Gene-Disease/disease2genecard2021.json") as fp:
         disease2card = json.load(fp)
 
-with open("../../../../data/association/Gene-Disease/genecard2disease2021.json") as fp:
+with open(path_main+"/"+"data/association/Gene-Disease/genecard2disease2021.json") as fp:
         card2disease = json.load(fp)
 
 ########################################################################################
