@@ -29,7 +29,7 @@ path_main="../../../.."
 path_disease_result=path_main+"/"+"src/result/diseaserank/result"
 
 ########################################################################################
-path_gene_finally=path_main+"/"+"src/utils/GeneRankResult/finally"
+path_gene_finally=path_main+"/"+"src/utils/GeneRankResult"
 
 def mkdir(path):
     folder = os.path.exists(path)
