@@ -9,6 +9,11 @@ Please follow the following steps to run the three examples provided in the date
 
 Extract the data/diseaselist.rar file to a current folder where you choose
 
+Get the similarity_matrix file at:
+https://drive.google.com/file/d/1CSYfDj5fG9SsosIDlG-hLAoKp9eMHxjH/view?usp=share_link
+
+Place the downloaded matrix file in the data/matrix folder
+
 Extract the data/matrix/lin_similarity_matrix.json.gz file to your chosen current folder
 
 Go to the src/model/Phen2Disease folder:
