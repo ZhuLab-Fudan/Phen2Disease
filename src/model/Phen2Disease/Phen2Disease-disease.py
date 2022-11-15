@@ -268,20 +268,18 @@ for file in files_patient_folder:
         max_score = 0
         term_weight = []
 
-        for term_1 in similarity:
-            if term_1 in disease_term_list:
-                score_term_list = []
 
-                for term_2 in similarity[term_1]:
-                    if term_2 in patient_term_list:
-                        score_term_list.append(similarity[term_1][term_2])
+        for term_1 in disease_term_list_filter:
+            score_term_list = []
+            for term_2 in patient_term_list_filter:
+                score_term_list.append(similarity[term_1][term_2])
 
-                if np.array(score_term_list).shape[0] == 0:
-                    max_score = max_score + 0
-                else:
-                    index_weight = score_term_list.index(max(score_term_list))
-                    term_weight.append(ic[term_1])
-                    max_score = max_score + max(score_term_list) * ic[term_1]
+            if np.array(score_term_list).shape[0] == 0:
+                max_score = max_score + 0
+            else:
+                term_weight.append(ic[term_1])
+                max_score = max_score + max(score_term_list) * ic[term_1]
+
 
         if sum(term_weight) == 0:
             max_score = max_score / (epsilon)
