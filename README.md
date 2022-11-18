@@ -7,7 +7,7 @@ Please follow the following steps to run the three examples provided in the date
 
 # PreProcessing
 
-Extract the data/diseaselist.rar file to a current folder where you choose
+Extract data/diseaselist.zip and data/genelist.zip files to a current folder where you choose
 
 Get the similarity_matrix file at:
 https://drive.google.com/file/d/1CSYfDj5fG9SsosIDlG-hLAoKp9eMHxjH/view?usp=share_link
@@ -40,13 +40,23 @@ Go to the src/utils/DiseaseRankResult folder, and you can get final files of the
 
 (1) Go to the src/model/Similarityscore/gene_integrated folder and run:
 
-score2disease_patient.py, and score2disease_double.py, (score2disease_disease.py can be run optionally))
+score2disease_patient.py, and score2disease_double.py, (score2disease_disease.py can be run optionally)
 
 In the src/result/diseaserank/result folder, you can get the json file of diseases prioritization files after merging cases.
 
 (2) Run gene_integrated.py
 
 Go to the src/utils/GeneRankResult folder, and you can get final files of the integrated gene ranking results.
+
+# BASE_IC
+
+Go to the src/model/BASE_IC folder and run:
+
+BASE_IC_GeneRank.py (BASE_IC_DiseaseRank.py)
+
+In the src/model/BASE_IC/GeneRank(DiseaseRank) folder, you can get files of the gene(disease) ranking results.
+
+For the Data Cohorts 1-6, you can find them at the following sites:
 
 # Data Cohorts
 
