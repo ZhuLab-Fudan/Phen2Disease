@@ -56,8 +56,6 @@ BASE_IC_GeneRank.py (BASE_IC_DiseaseRank.py)
 
 In the src/model/BASE_IC/GeneRank(DiseaseRank) folder, you can get files of the gene(disease) ranking results.
 
-For the Data Cohorts 1-6, you can find them at the following sites:
-
 # Data Cohorts
 
 For the Data Cohorts 1-6, you can find them at the following sites:
