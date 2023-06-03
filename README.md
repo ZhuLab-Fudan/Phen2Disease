@@ -101,5 +101,5 @@ Phenolyzer package: https://github.com/WGLab/phenolyzer
 
 # Citation
 
-Zhai, W., Huang, X., Shen, N., & Zhu, S. Phen2Disease: A Phenotype-driven Semantic Similarity-based Integrated Model for Disease and Gene Prioritization. In submission.
+Zhai W, Huang X, Shen N, Zhu S. Phen2Disease: a phenotype-driven model for disease and gene prioritization by bidirectional maximum matching semantic similarities. Brief Bioinform. 2023 May 29:bbad172.
 
